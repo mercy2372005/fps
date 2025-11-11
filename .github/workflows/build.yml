@@ -3,21 +3,25 @@ name: "Build and Export Game"
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
-    name: Export Godot HTML5 build
+    name: Export Godot 4.5.1 HTML5 build
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set up Godot
-        uses: firebelley/setup-godot@v2
+      - name: Set up Godot 4.5.1
+        uses: chickensoft-games/setup-godot@v2
         with:
-          godot-version: 4.3
-          export-templates-version: 4.3
+          version: 4.5.1
+          use-dotnet: false
+          include-templates: true
 
-      - name: Export HTML5
+      - name: Export HTML5 build
         run: |
           mkdir -p build/web
           godot --headless --export-release "Web" build/web/index.html
