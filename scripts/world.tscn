@@ -4206,6 +4206,7 @@ size = Vector2i(574, 648)
 render_target_update_mode = 4
 
 [node name="player1" parent="GridContainer/SubViewportContainer1/SubViewport" node_paths=PackedStringArray("spawn_points_parent") instance=ExtResource("12_ck6fg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8317512, -0.08790505, -0.39966583)
 spawn_points_parent = NodePath("../../../../SpawnPoints")
 
 [node name="UserInterface" type="Control" parent="GridContainer/SubViewportContainer1/SubViewport"]
